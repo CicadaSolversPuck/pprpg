@@ -1,0 +1,10 @@
+world
+----
+randomly generated with noise
+
+
+stats
+----
+attack
+defense
+stamina
