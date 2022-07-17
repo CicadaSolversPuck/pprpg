@@ -1,2 +1,2 @@
 # pprpg
-pprpg
+Poke + Puck rpg project
