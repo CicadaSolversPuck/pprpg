@@ -1,0 +1,32 @@
+fighting
+----
+
+
+items / shops
+----
+
+
+inventory
+----
+class
+
+
+world
+----
+randomly generated with noise
+
+
+player
+----
+class
+
+
+entities
+----
+class
+
+
+stats
+----
+attack
+defense
