@@ -14,6 +14,7 @@ class Inventory:
             self.items[item] = amount
 
     def remove_item(self, item, amount):
-        self.items[item] -= amount
-        if self.items[item] == 0:
+        if self.check_item(item, amount+1):
+            self.items[item] -= amount
+        else:
             del self.items[item]
