@@ -1,3 +1,4 @@
+# inventory.py
 class Inventory:
     items = {}
     vassus = 0
