@@ -16,7 +16,6 @@ class Inventory:
 
 # remove end comma
 
-
     def display(self):
         print('Inventory')
         print('-'*30)
@@ -35,7 +34,7 @@ class Slot:
 
 
 class DurabilitySlot(Slot):
-    def repair(self):
+    def __init__(self):
         super()
         durability = int(self.item.durability)
         number_of_uses = int(self.item.number_of_uses)
