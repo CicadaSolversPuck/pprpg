@@ -35,8 +35,10 @@ class Slot:
 
 
 class DurabilitySlot(Slot):
-    durability = int(self.item.durability)
-    number_of_uses = int(self.item.number_of_uses)
+    def repair(self):
+        super()
+        durability = int(self.item.durability)
+        number_of_uses = int(self.item.number_of_uses)
 
 
 class Item:
