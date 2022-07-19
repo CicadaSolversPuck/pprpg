@@ -1,9 +1,21 @@
 import entity
+import item_system
 
 puck = entity.Player()
-puck.inventory.add_item('bread', 20)
 
-if puck.inventory.check_item('bread', 20):
-    puck.inventory.remove_item('bread', 20)
+bread = item_system.Item('bread', False)
+rum = item_system.Item('rum')
 
-print(puck.inventory.items)
+
+def inventory_test():
+    puck.give_item(bread, 20)
+    puck.give_item(rum, 2)
+
+    if puck.inventory.find(bread, 20) is not True:
+        puck.inventory.display()
+        puck.remove_item(bread, 18)
+
+    puck.inventory.display()
+
+
+inventory_test()
