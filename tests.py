@@ -25,6 +25,12 @@ class TestInventoryMethods(unittest.TestCase):
         puck.remove_item(self.rum, 20)
         self.assertEqual(puck.inventory.slots, [])
 
+    def test_remove_some_stackable_item(self):
+        puck = entity.Player()
+        puck.give_item(self.rum, 20)
+        puck.remove_item(self.rum, 10)
+        self.assertEqual(puck.inventory.slots[0].amount, 10)
+
 
 if __name__ == '__main__':
     unittest.main()
