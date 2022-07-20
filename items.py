@@ -9,7 +9,8 @@ class Item:
         return False
 
 class Consumable(Item):
-    def __init__(self, heal):
+    def __init__(self, name=None, stackable=True, heal=0):
+        super().__init__(name, stackable)
         self.heal = heal
     
     def action(self, user):
@@ -18,11 +19,11 @@ class Consumable(Item):
         return True
 
 class Weapon(Item):
-    damage = 0
-    durability = 0
-    durability_deduction = 0
-    pstamina_deduction = 0
-    stackable = False
+    def __init__(self, name=None, stackable=False, damage=0, durability=0, pstamina_deduction=0):
+        super().__init__(name, stackable)
+        self.damage = damage
+        self.durability = durability
+        self.pstamina_deduction = pstamina_deduction
 
     def action(self, user, victim):
         user.tire(self.pstamina_deduction)

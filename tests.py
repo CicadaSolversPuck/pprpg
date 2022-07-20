@@ -1,12 +1,12 @@
 import unittest
 import entity
-import item_system
-
+import inventory
+import items
 
 class TestInventoryMethods(unittest.TestCase):
 
-    bread = item_system.Item('bread', False)
-    rum = item_system.Item('rum')
+    bread = items.Item('bread', False)
+    rum = items.Item('rum')
 
     def test_add_item(self):
         puck = entity.Player()

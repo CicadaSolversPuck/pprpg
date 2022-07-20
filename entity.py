@@ -1,4 +1,4 @@
-import item_system
+import inventory
 import location_handler
 
 
@@ -36,7 +36,7 @@ class HostileEntity(Entity):
 
 
 class Player(Entity):
-    inventory = item_system.Inventory()
+    inventory = inventory.Inventory()
     stamina = 100
     mstamina = 100
     combat_moves = []

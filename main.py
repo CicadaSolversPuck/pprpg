@@ -1,16 +1,13 @@
 import entity
-import item_system
+import data.consumables
 
 puck = entity.Player()
 
-bread = item_system.Item('bread')
-rum = item_system.Item('rum')
+bread = data.consumables.bread
 
 
 def inventory_test():
     puck.give_item(bread, 20)
-
-    puck.remove_item(bread, 20)
 
     puck.inventory.display()
 
