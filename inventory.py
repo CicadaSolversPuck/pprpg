@@ -40,27 +40,3 @@ class DurabilitySlot(Slot):
         durability = int(self.item.durability)
         number_of_uses = int(self.item.number_of_uses)
 
-
-class Item:
-    def __init__(self, name=None, stackable=True):
-        self.name = name
-        self.cost = 0
-        self.information = None
-        self.stackable = stackable
-
-    def use(self, *args):
-        return False
-
-
-class Weapon(Item):
-    damage = 0
-    durability = 0
-    durability_deduction = 0
-    pstamina_deduction = 0
-    stackable = False
-
-    def action(self, user, victim):
-        user.tire(self.pstamina_deduction)
-        victim.hurt(self.damage)
-        self.durability -= min(self.pstamina_deduction, self.durability)
-        return True
