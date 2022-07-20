@@ -46,15 +46,23 @@ class Player(Entity):
     location = location_handler.Location()
 
     def give_item(self, item, amount):
-        if self.inventory.find(item, 1) and item.stackable:
-            self.inventory.slots[self.inventory.find(item, 1)] += amount
+        if item.stackable:
+            if self.inventory.find(item, 1):
+                self.inventory.slots[self.inventory.find(item, 1)] += amount
+            else:
+                self.inventory.new_slot(item, amount)
         else:
             for i in range(amount):
                 self.inventory.new_slot(item, 1)
 
     def remove_item(self, item, amount):
-        if self.inventory.find(item, 1) is not True and item.stackable:
-            self.inventory.slots[self.inventory.find(
-                item, amount+1)].amount -= amount
-        else:
-            del self.inventory.slots[self.inventory.find(item, 1)]
+        slot_index = self.inventory.find(item, amount)
+        if item.stackable and slot_index is not False:
+            self.inventory.slots[slot_index].amount -= amount
+            if self.inventory.slots[slot_index].amount <= 0:
+                self.inventory.slots.pop(slot_index)
+        elif not item.stackable:
+            for i in range(amount):
+                slot_index = self.inventory.find(item, 1)
+                if slot_index is not False:
+                    self.inventory.slots.pop(slot_index)

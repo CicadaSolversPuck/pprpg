@@ -16,6 +16,7 @@ class Inventory:
 
 # remove end comma
 
+
     def display(self):
         print('Inventory')
         print('-'*30)
