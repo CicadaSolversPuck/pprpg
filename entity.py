@@ -30,20 +30,20 @@ class Entity:
 
 
 class HostileEntity(Entity):
-
-    combat_moves = []
     drops = {}
 
 
 class Player(Entity):
-    inventory = inventory.Inventory()
     stamina = 100
     mstamina = 100
-    combat_moves = []
     hp = 100
     mhp = 100
     exp = 0
-    location = location_handler.Location()
+
+    def __init__(self):
+        self.location = location_handler.Location()
+        self.inventory = inventory.Inventory()
+        self.combat_moves = []
 
     def give_item(self, item, amount):
         if item.stackable:

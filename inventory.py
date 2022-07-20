@@ -1,6 +1,8 @@
 class Inventory:
-    slots = []
     vassus = 0
+
+    def __init__(self):
+        self.slots = []
 
     def find(self, item, amount):
         n = -1
@@ -15,7 +17,6 @@ class Inventory:
 
 
 # remove end comma
-
 
     def display(self):
         print('Inventory')
@@ -39,4 +40,3 @@ class DurabilitySlot(Slot):
         super()
         durability = int(self.item.durability)
         number_of_uses = int(self.item.number_of_uses)
-
