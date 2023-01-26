@@ -8,3 +8,4 @@ stats
 attack
 defense
 stamina
+player
